@@ -23,6 +23,11 @@ object ConcreteScores : ICache {
         return order(scores)
     }
 
+    fun getCategories(): List<Pair<String,List<HighScore>>>{
+        return (content as List<HighScore>).groupBy {
+            it.word.category
+        }.toList()
+    }
 
     fun getHighScoreFromCategory(category: String): List<HighScore> {
         val scores: ArrayList<HighScore> = ArrayList()
