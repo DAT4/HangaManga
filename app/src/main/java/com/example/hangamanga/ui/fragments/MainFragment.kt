@@ -7,16 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.hangamanga.R
 import com.example.hangamanga.databinding.FragmentLoginBinding
+import com.example.hangamanga.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
-    private lateinit var _binding: FragmentLoginBinding
+    private lateinit var _binding: FragmentMainBinding
     private val binding get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
         return binding.root
     }
 

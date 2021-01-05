@@ -6,17 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.hangamanga.R
+import com.example.hangamanga.databinding.FragmentEditWordBinding
 import com.example.hangamanga.databinding.FragmentLoginBinding
 
 class EditWordFragment : Fragment() {
-    private lateinit var _binding: FragmentLoginBinding
+    private lateinit var _binding: FragmentEditWordBinding
     private val binding get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentEditWordBinding.inflate(inflater, container, false)
         return binding.root
     }
 
