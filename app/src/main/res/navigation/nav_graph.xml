@@ -2,7 +2,74 @@
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    >
+    app:startDestination="@id/mainFragment">
 
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.hangamanga.ui.fragments.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_highScoreFragment"
+            app:destination="@id/highScoreFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_pickCategoryFragment2"
+            app:destination="@id/pickCategoryFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/highScoreFragment"
+        android:name="com.example.hangamanga.ui.fragments.HighScoreFragment"
+        android:label="HighScoreFragment" />
+    <fragment
+        android:id="@+id/editCategoryFragment"
+        android:name="com.example.hangamanga.ui.fragments.EditCategoryFragment"
+        android:label="EditCategoryFragment" >
+        <action
+            android:id="@+id/action_editCategoryFragment_to_editWordFragment"
+            app:destination="@id/editWordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editWordFragment"
+        android:name="com.example.hangamanga.ui.fragments.EditWordFragment"
+        android:label="EditWordFragment" />
+    <fragment
+        android:id="@+id/startGameFragment"
+        android:name="com.example.hangamanga.ui.fragments.StartGameFragment"
+        android:label="StartGameFragment" >
+        <action
+            android:id="@+id/action_startGameFragment_to_playGameFragment2"
+            app:destination="@id/playGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playGameFragment"
+        android:name="com.example.hangamanga.ui.fragments.PlayGameFragment"
+        android:label="PlayGameFragment" >
+        <action
+            android:id="@+id/action_playGameFragment_to_endGameFragment"
+            app:destination="@id/endGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickCategoryFragment"
+        android:name="com.example.hangamanga.ui.fragments.PickCategoryFragment"
+        android:label="PickCategoryFragment" >
+        <action
+            android:id="@+id/action_pickCategoryFragment_to_startGameFragment"
+            app:destination="@id/startGameFragment" />
+        <action
+            android:id="@+id/action_pickCategoryFragment_to_editCategoryFragment"
+            app:destination="@id/editCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/endGameFragment"
+        android:name="com.example.hangamanga.ui.fragments.EndGameFragment"
+        android:label="EndGameFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.hangamanga.ui.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>

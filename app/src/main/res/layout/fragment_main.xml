@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.LoginFragment">
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.MainFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/image"
+        android:layout_weight="3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:src="@drawable/ic_launcher_foreground"
+        />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="2">
+        <Button
+            android:id="@+id/play"
+            android:text="Start Game"
+            android:textSize="30sp"
+            android:layout_width="300dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="80dp" />
+
+        <Button
+            android:id="@+id/watch_highscores"
+            android:text="Highscores"
+            android:textSize="30sp"
+            android:layout_width="300dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="80dp" />
+    </LinearLayout>
+
+</LinearLayout>
