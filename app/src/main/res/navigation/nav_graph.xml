@@ -14,7 +14,7 @@
             android:id="@+id/action_mainFragment_to_highScoreFragment"
             app:destination="@id/highScoreFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_pickCategoryFragment2"
+            android:id="@+id/action_mainFragment_to_pickCategoryFragment"
             app:destination="@id/pickCategoryFragment" />
         <action
             android:id="@+id/action_mainFragment_to_loginFragment"
@@ -41,7 +41,7 @@
         android:name="com.example.hangamanga.ui.fragments.StartGameFragment"
         android:label="StartGameFragment" >
         <action
-            android:id="@+id/action_startGameFragment_to_playGameFragment2"
+            android:id="@+id/action_startGameFragment_to_playGameFragment"
             app:destination="@id/playGameFragment" />
     </fragment>
     <fragment

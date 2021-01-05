@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.example.hangamanga.R
 import com.example.hangamanga.databinding.FragmentLoginBinding
 import com.example.hangamanga.databinding.FragmentMainBinding
@@ -23,6 +25,13 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        println("Hello")
+        binding.apply {
+            play.setOnClickListener{
+                root.findNavController().navigate(R.id.action_mainFragment_to_pickCategoryFragment)
+            }
+            highscores.setOnClickListener{
+                root.findNavController().navigate(R.id.action_mainFragment_to_highScoreFragment)
+            }
+        }
     }
 }

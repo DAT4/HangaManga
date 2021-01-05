@@ -34,7 +34,7 @@
             android:layout_height="80dp" />
 
         <Button
-            android:id="@+id/watch_highscores"
+            android:id="@+id/highscores"
             android:text="Highscores"
             android:textSize="30sp"
             android:layout_width="300dp"
