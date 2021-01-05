@@ -1,4 +1,4 @@
-package sh.mama.hangman.models
+package com.example.hangamanga.models
 
 import java.io.Serializable
 
@@ -8,7 +8,7 @@ data class HighScore(
     val time: Int,
     val hints: Int,
     val wrongs: Int,
-    val word:Word
+    val word: Word
 ) : Serializable {
     fun getScore():Int {
         return time*word.difficulty/hints/(wrongs+1)

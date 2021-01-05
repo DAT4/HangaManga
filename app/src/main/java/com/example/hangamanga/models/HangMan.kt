@@ -1,6 +1,7 @@
-package sh.mama.hangman.models
+package com.example.hangamanga.models
 
-import sh.mama.hangman.R
+import com.example.hangamanga.R
+
 
 class HangMan {
     var level = 0

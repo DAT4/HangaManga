@@ -1,4 +1,4 @@
-package sh.mama.hangman.models
+package com.example.hangamanga.models
 
 import java.io.Serializable
 

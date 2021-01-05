@@ -1,21 +1,19 @@
-package sh.mama.hangman.adapters
+package com.example.hangamanga.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import sh.mama.hangman.models.HighScore
-import java.util.*
+import com.example.hangamanga.databinding.CardviewHighscoreBinding
+import com.example.hangamanga.models.HighScore
 
 class HighScoreRecyclerViewAdapter(
-        private var highScores : List<HighScore>,
+    private var highScores : List<HighScore>,
 ) : RecyclerView.Adapter<HighScoreRecyclerViewAdapter.HighScoreViewHolder>() {
-    inner class HighScoreViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class HighScoreViewHolder(binding: CardviewHighscoreBinding) : RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HighScoreViewHolder{
-        val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.event_card_fragment, parent, false)
-        return HighScoreViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HighScoreViewHolder {
+        val binding = CardviewHighscoreBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return HighScoreViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: HighScoreViewHolder, position: Int) {

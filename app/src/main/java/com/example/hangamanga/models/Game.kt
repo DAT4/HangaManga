@@ -1,4 +1,4 @@
-package sh.mama.hangman.models
+package com.example.hangamanga.models
 
 data class Game(val word: Word) {
     val hangman = HangMan()
