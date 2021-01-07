@@ -28,10 +28,6 @@ class MainFragment : Fragment() {
                 val action = MainFragmentDirections.actionMainFragmentToPickToPlayCategoryFragment()
                 findNavController().navigate(action)
             }
-            highscores.setOnClickListener{
-                val action = MainFragmentDirections.actionMainFragmentToHighScoreFragment()
-                findNavController().navigate(action)
-            }
         }
     }
 }

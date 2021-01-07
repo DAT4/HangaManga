@@ -55,7 +55,7 @@ class PlayGameFragment : Fragment() {
         binding.state.setImageResource(game.hangman.getState())
         generateKeyboard()
 
-        timer = object : CountDownTimer(15 * 1000 , 1000) {
+        timer = object : CountDownTimer(3 * 60 * 1000 , 1000) {
             override fun onTick(p0: Long) {
                 time = (p0 / 1000).toInt()
                 val minutes = p0 / 1000 / 60
@@ -154,8 +154,12 @@ class PlayGameFragment : Fragment() {
         return button
     }
 
-    private fun endGame(won: Boolean) {
+    override fun onDestroy() {
+        super.onDestroy()
         timer.cancel()
+    }
+
+    private fun endGame(won: Boolean) {
         val score =
             HighScore(
                 player = TokenHolder.user.username,

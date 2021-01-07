@@ -11,15 +11,6 @@
         tools:layout="@layout/fragment_main"
         android:label="MainFragment">
         <action
-            android:id="@+id/action_mainFragment_to_highScoreFragment"
-            app:destination="@id/highScoreFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_startGameFragment"
-            app:destination="@id/startGameFragment" />
-        <action
             android:id="@+id/action_mainFragment_to_pickToPlayCategoryFragment"
             app:destination="@id/pickToPlayCategoryFragment" />
         <action
@@ -50,18 +41,13 @@
         tools:layout="@layout/fragment_edit_word"
         android:label="EditWordFragment" />
     <fragment
-        android:id="@+id/startGameFragment"
-        android:name="com.example.hangamanga.ui.fragments.StartGameFragment"
-        tools:layout="@layout/fragment_start_game"
-        android:label="StartGameFragment" />
-    <fragment
         android:id="@+id/playGameFragment"
         android:name="com.example.hangamanga.ui.fragments.PlayGameFragment"
         tools:layout="@layout/fragment_play_game"
         android:label="PlayGameFragment">
         <action
             android:id="@+id/action_playGameFragment_to_endGameFragment"
-            app:popUpTo="@id/pickToEditCategoryFragment"
+            app:popUpTo="@id/pickToPlayCategoryFragment"
             app:popUpToInclusive="false"
             app:destination="@id/endGameFragment" />
         <argument
