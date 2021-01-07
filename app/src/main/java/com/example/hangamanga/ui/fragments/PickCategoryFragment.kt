@@ -12,7 +12,7 @@ import com.example.hangamanga.adapters.CategoryRecyclerViewAdapter
 import com.example.hangamanga.api.Resource
 import com.example.hangamanga.databinding.FragmentPickCategoryBinding
 import com.example.hangamanga.models.Word
-import com.example.hangamanga.mvvm.Word.WordViewModel
+import com.example.hangamanga.mvvm.word.WordViewModel
 import com.example.hangamanga.ui.MainActivity
 
 class PickCategoryFragment : Fragment() {

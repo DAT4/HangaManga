@@ -11,7 +11,7 @@ import com.example.hangamanga.adapters.CategoryHighScoreViewpagerAdapter
 import com.example.hangamanga.api.Resource
 import com.example.hangamanga.databinding.FragmentHighscoreBinding
 import com.example.hangamanga.models.HighScore
-import com.example.hangamanga.mvvm.Score.ScoreViewModel
+import com.example.hangamanga.mvvm.score.ScoreViewModel
 import com.example.hangamanga.ui.MainActivity
 
 class HighScoreFragment : Fragment() {

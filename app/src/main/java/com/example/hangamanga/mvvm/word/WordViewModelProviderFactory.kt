@@ -1,4 +1,4 @@
-package com.example.hangamanga.mvvm.Word
+package com.example.hangamanga.mvvm.word
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

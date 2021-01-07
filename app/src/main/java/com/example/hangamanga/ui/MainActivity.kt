@@ -4,14 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.example.hangamanga.databinding.ActivityMainBinding
-import com.example.hangamanga.mvvm.Score.ScoreDatabase
-import com.example.hangamanga.mvvm.Score.ScoreRepository
-import com.example.hangamanga.mvvm.Score.ScoreViewModel
-import com.example.hangamanga.mvvm.Score.ScoreViewModelProviderFactory
-import com.example.hangamanga.mvvm.Word.WordDatabase
-import com.example.hangamanga.mvvm.Word.WordRepository
-import com.example.hangamanga.mvvm.Word.WordViewModel
-import com.example.hangamanga.mvvm.Word.WordViewModelProviderFactory
+import com.example.hangamanga.mvvm.score.ScoreDatabase
+import com.example.hangamanga.mvvm.score.ScoreRepository
+import com.example.hangamanga.mvvm.score.ScoreViewModel
+import com.example.hangamanga.mvvm.score.ScoreViewModelProviderFactory
+import com.example.hangamanga.mvvm.word.WordDatabase
+import com.example.hangamanga.mvvm.word.WordRepository
+import com.example.hangamanga.mvvm.word.WordViewModel
+import com.example.hangamanga.mvvm.word.WordViewModelProviderFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

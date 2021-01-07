@@ -1,4 +1,4 @@
-package com.example.hangamanga.mvvm.Word
+package com.example.hangamanga.mvvm.word
 
 import com.example.hangamanga.api.RetrofitInstance
 

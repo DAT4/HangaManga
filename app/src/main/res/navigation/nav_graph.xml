@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
@@ -9,7 +8,8 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.hangamanga.ui.fragments.MainFragment"
-        android:label="MainFragment" >
+        tools:layout="@layout/fragment_main"
+        android:label="MainFragment">
         <action
             android:id="@+id/action_mainFragment_to_highScoreFragment"
             app:destination="@id/highScoreFragment" />
@@ -26,11 +26,13 @@
     <fragment
         android:id="@+id/highScoreFragment"
         android:name="com.example.hangamanga.ui.fragments.HighScoreFragment"
+        tools:layout="@layout/fragment_highscore"
         android:label="HighScoreFragment" />
     <fragment
         android:id="@+id/editCategoryFragment"
         android:name="com.example.hangamanga.ui.fragments.EditCategoryFragment"
-        android:label="EditCategoryFragment" >
+        tools:layout="@layout/fragment_edit_category"
+        android:label="EditCategoryFragment">
         <action
             android:id="@+id/action_editCategoryFragment_to_editWordFragment"
             app:destination="@id/editWordFragment" />
@@ -38,16 +40,18 @@
     <fragment
         android:id="@+id/editWordFragment"
         android:name="com.example.hangamanga.ui.fragments.EditWordFragment"
+        tools:layout="@layout/fragment_edit_word"
         android:label="EditWordFragment" />
     <fragment
         android:id="@+id/startGameFragment"
         android:name="com.example.hangamanga.ui.fragments.StartGameFragment"
-        android:label="StartGameFragment" >
-    </fragment>
+        tools:layout="@layout/fragment_start_game"
+        android:label="StartGameFragment"></fragment>
     <fragment
         android:id="@+id/playGameFragment"
         android:name="com.example.hangamanga.ui.fragments.PlayGameFragment"
-        android:label="PlayGameFragment" >
+        tools:layout="@layout/fragment_play_game"
+        android:label="PlayGameFragment">
         <action
             android:id="@+id/action_playGameFragment_to_endGameFragment"
             app:destination="@id/endGameFragment" />
@@ -58,7 +62,8 @@
     <fragment
         android:id="@+id/pickCategoryFragment"
         android:name="com.example.hangamanga.ui.fragments.PickCategoryFragment"
-        android:label="PickCategoryFragment" >
+        tools:layout="@layout/fragment_pick_category"
+        android:label="PickCategoryFragment">
         <action
             android:id="@+id/action_pickCategoryFragment_to_editCategoryFragment"
             app:destination="@id/editCategoryFragment" />
@@ -69,6 +74,7 @@
     <fragment
         android:id="@+id/endGameFragment"
         android:name="com.example.hangamanga.ui.fragments.EndGameFragment"
+        tools:layout="@layout/fragment_end_game"
         android:label="EndGameFragment" />
     <fragment
         android:id="@+id/loginFragment"

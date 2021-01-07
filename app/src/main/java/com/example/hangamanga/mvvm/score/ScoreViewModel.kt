@@ -1,34 +1,34 @@
-package com.example.hangamanga.mvvm.Word
+package com.example.hangamanga.mvvm.score
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.hangamanga.api.Resource
-import com.example.hangamanga.models.Word
+import com.example.hangamanga.models.HighScore
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
-class WordViewModel(
-    private val repository: WordRepository
+class ScoreViewModel(
+    private val repository: ScoreRepository
 ) : ViewModel() {
 
-    val words: MutableLiveData<Resource<List<Word>>> = MutableLiveData()
+    val scores: MutableLiveData<Resource<List<HighScore>>> = MutableLiveData()
 
     init {
-        getWords()
+        getScores()
     }
 
-    private fun getWords() = viewModelScope.launch {
+    private fun getScores() = viewModelScope.launch {
         try {
-            words.postValue(Resource.Loading())
-            val response = repository.getWords()
-            words.postValue(handleWordResponse(response))
+            scores.postValue(Resource.Loading())
+            val response = repository.getScores()
+            scores.postValue(handleScoreResponse(response))
         } catch (e: Exception) {
             println(e)
         }
     }
 
-    private fun handleWordResponse(response: Response<List<Word>>) : Resource<List<Word>> {
+    private fun handleScoreResponse(response: Response<List<HighScore>>) : Resource<List<HighScore>> {
         if (response.isSuccessful) {
             response.body()?.let { resultResponse ->
                 return Resource.Success(resultResponse)

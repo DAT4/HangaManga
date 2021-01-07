@@ -1,4 +1,4 @@
-package com.example.hangamanga.mvvm.Word
+package com.example.hangamanga.mvvm.word
 
 import android.content.Context
 

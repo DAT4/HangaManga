@@ -1,4 +1,4 @@
-package com.example.hangamanga.mvvm.Score
+package com.example.hangamanga.mvvm.score
 
 import android.content.Context
 
