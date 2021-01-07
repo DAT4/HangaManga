@@ -9,11 +9,13 @@ import android.widget.Toast
 import androidx.core.view.get
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.hangamanga.R
 import com.example.hangamanga.api.RetrofitInstance
 import com.example.hangamanga.api.TokenHolder
 import com.example.hangamanga.databinding.FragmentLoginBinding
 import com.example.hangamanga.models.User
 import com.example.hangamanga.ui.MainActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
@@ -47,7 +49,11 @@ class LoginFragment : Fragment() {
                         true -> {
                             TokenHolder.token = response.body()!!.token
                             Toast.makeText(requireContext(), "Logged in", Toast.LENGTH_SHORT)
-                            (activity as MainActivity).bottomMenu.menu[2].isEnabled = false
+                            (activity as MainActivity).apply {
+                                bottomMenu.menu[2].isEnabled = false
+                                bottomMenu.inflateMenu(R.menu.bottom_menu_logged_in)
+
+                            }
                             findNavController().popBackStack()
                         }
                         false -> Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT)

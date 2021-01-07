@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.fragments.LoginFragment"
+    tools:context=".ui.fragments.PickToPlayCategoryFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center"
-            android:text="Pick a Category!"
+            android:text="Edit a Category!"
             android:textSize="30sp" />
 
         <androidx.recyclerview.widget.RecyclerView

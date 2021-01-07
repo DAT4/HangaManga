@@ -14,14 +14,17 @@
             android:id="@+id/action_mainFragment_to_highScoreFragment"
             app:destination="@id/highScoreFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_pickCategoryFragment"
-            app:destination="@id/pickCategoryFragment" />
-        <action
             android:id="@+id/action_mainFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_mainFragment_to_startGameFragment"
             app:destination="@id/startGameFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_pickToPlayCategoryFragment"
+            app:destination="@id/pickToPlayCategoryFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_pickToEditCategoryFragment2"
+            app:destination="@id/pickToEditCategoryFragment2" />
     </fragment>
 
     <fragment
@@ -37,6 +40,9 @@
         <action
             android:id="@+id/action_editCategoryFragment_to_editWordFragment"
             app:destination="@id/editWordFragment" />
+        <argument
+            android:name="category"
+            app:argType="com.example.hangamanga.models.Category" />
     </fragment>
     <fragment
         android:id="@+id/editWordFragment"
@@ -55,28 +61,12 @@
         android:label="PlayGameFragment">
         <action
             android:id="@+id/action_playGameFragment_to_endGameFragment"
-            app:popUpTo="@id/pickCategoryFragment"
+            app:popUpTo="@id/pickToEditCategoryFragment"
             app:popUpToInclusive="false"
             app:destination="@id/endGameFragment" />
         <argument
             android:name="word"
             app:argType="com.example.hangamanga.models.Word" />
-        <argument
-            android:name="player"
-            app:argType="string"
-            android:defaultValue="n00b" />
-    </fragment>
-    <fragment
-        android:id="@+id/pickCategoryFragment"
-        android:name="com.example.hangamanga.ui.fragments.PickCategoryFragment"
-        tools:layout="@layout/fragment_pick_category"
-        android:label="PickCategoryFragment">
-        <action
-            android:id="@+id/action_pickCategoryFragment_to_editCategoryFragment"
-            app:destination="@id/editCategoryFragment" />
-        <action
-            android:id="@+id/action_pickCategoryFragment_to_playGameFragment"
-            app:destination="@id/playGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/endGameFragment"
@@ -95,14 +85,30 @@
             app:popUpToInclusive="true"
             app:destination="@id/mainFragment" />
         <action
-            android:id="@+id/action_endGameFragment_to_pickCategoryFragment"
-            app:popUpTo="@id/pickCategoryFragment"
-            app:popUpToInclusive="true"
-            app:destination="@id/pickCategoryFragment" />
+            android:id="@+id/action_endGameFragment_to_pickToPlayCategoryFragment"
+            app:destination="@id/pickToPlayCategoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.hangamanga.ui.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/pickToPlayCategoryFragment"
+        android:name="com.example.hangamanga.ui.fragments.PickToPlayCategoryFragment"
+        android:label="fragment_pick_to_play_category"
+        tools:layout="@layout/fragment_pick_to_play_category" >
+        <action
+            android:id="@+id/action_pickToPlayCategoryFragment_to_playGameFragment"
+            app:destination="@id/playGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickToEditCategoryFragment2"
+        android:name="com.example.hangamanga.ui.fragments.PickToEditCategoryFragment"
+        android:label="fragment_pick_to_edit_category"
+        tools:layout="@layout/fragment_pick_to_edit_category" >
+        <action
+            android:id="@+id/action_pickToEditCategoryFragment2_to_editCategoryFragment"
+            app:destination="@id/editCategoryFragment" />
+    </fragment>
 </navigation>

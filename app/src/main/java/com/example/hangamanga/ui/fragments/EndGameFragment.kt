@@ -76,7 +76,7 @@ class EndGameFragment : Fragment() {
         binding.apply {
             playAgainBtn.setOnClickListener {
                 val action =
-                    EndGameFragmentDirections.actionEndGameFragmentToPickCategoryFragment()
+                    EndGameFragmentDirections.actionEndGameFragmentToPickToPlayCategoryFragment()
                 findNavController().navigate(action)
             }
 

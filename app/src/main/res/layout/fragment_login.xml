@@ -23,6 +23,7 @@
             android:layout_height="match_parent"
             android:textSize="32dp"
             android:hint="Username"
+            android:text="martin"
             android:inputType="textPersonName" />
 
         <EditText
@@ -31,6 +32,7 @@
             android:layout_height="match_parent"
             android:textSize="32dp"
             android:hint="Password"
+            android:text="pass"
             android:inputType="textPassword" />
 
         <Space

@@ -16,6 +16,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.hangamanga.R
+import com.example.hangamanga.api.TokenHolder
 import com.example.hangamanga.databinding.FragmentPlayGameBinding
 import com.example.hangamanga.models.Game
 import com.example.hangamanga.models.HighScore
@@ -28,7 +29,6 @@ class PlayGameFragment : Fragment() {
     private val args: PlayGameFragmentArgs by navArgs()
 
     private lateinit var game: Game
-    private lateinit var player: String
     private lateinit var timer: CountDownTimer
     private var time = 0
     private var hintCounter = 1
@@ -39,7 +39,6 @@ class PlayGameFragment : Fragment() {
         val word = args.word
         word.make()
         game = Game(word)
-        player = args.player
     }
 
     override fun onCreateView(
@@ -159,7 +158,7 @@ class PlayGameFragment : Fragment() {
         timer.cancel()
         val score =
             HighScore(
-                player = player,
+                player = TokenHolder.user.username,
                 time = this.time,
                 hints = this.hintCounter,
                 wrongs = this.game.hangman.level,

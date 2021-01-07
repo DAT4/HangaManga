@@ -25,7 +25,7 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             play.setOnClickListener{
-                val action = MainFragmentDirections.actionMainFragmentToPickCategoryFragment()
+                val action = MainFragmentDirections.actionMainFragmentToPickToPlayCategoryFragment()
                 findNavController().navigate(action)
             }
             highscores.setOnClickListener{

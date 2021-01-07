@@ -10,13 +10,13 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hangamanga.adapters.CategoryRecyclerViewAdapter
 import com.example.hangamanga.api.Resource
-import com.example.hangamanga.databinding.FragmentPickCategoryBinding
+import com.example.hangamanga.databinding.FragmentPickToEditCategoryBinding
 import com.example.hangamanga.models.Word
 import com.example.hangamanga.mvvm.word.WordViewModel
 import com.example.hangamanga.ui.MainActivity
 
-class PickCategoryFragment : Fragment() {
-    private lateinit var _binding: FragmentPickCategoryBinding
+class PickToEditCategoryFragment : Fragment() {
+    private lateinit var _binding: FragmentPickToEditCategoryBinding
     private val binding get() = _binding
 
     private lateinit var viewModel: WordViewModel
@@ -26,7 +26,7 @@ class PickCategoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentPickCategoryBinding.inflate(inflater, container, false)
+        _binding = FragmentPickToEditCategoryBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -62,7 +62,7 @@ class PickCategoryFragment : Fragment() {
     }
 
     private fun setupRecyclerView(words: List<Word>) {
-        categoryAdapter = CategoryRecyclerViewAdapter(getCategories(words))
+        categoryAdapter = CategoryRecyclerViewAdapter(getCategories(words), false)
         binding.list.apply {
             adapter = categoryAdapter
             layoutManager = LinearLayoutManager(activity)

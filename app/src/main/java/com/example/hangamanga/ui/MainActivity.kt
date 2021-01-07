@@ -2,12 +2,8 @@ package com.example.hangamanga.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.core.view.get
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.hangamanga.R
 import com.example.hangamanga.databinding.ActivityMainBinding
@@ -43,11 +39,9 @@ class MainActivity : AppCompatActivity() {
         val scoreViewModelProviderFactory = ScoreViewModelProviderFactory(scoreRepository)
         scoreViewModel = ViewModelProvider(this, scoreViewModelProviderFactory).get(ScoreViewModel::class.java)
 
-        bottomMenu = findViewById(R.id.bottomNavigationView)
+        bottomMenu = binding.bottomNavigationView
         val navController = findNavController(R.id.fragment)
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.mainFragment, R.id.highScoreFragment, R.id.loginFragment))
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
         bottomMenu.setupWithNavController(navController)
     }
 }
+
