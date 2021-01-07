@@ -19,7 +19,6 @@ class HighScoreFragment : Fragment() {
     private val binding get() = _binding
 
     private lateinit var viewModel: ScoreViewModel
-    private lateinit var categoryAdapter: CategoryHighScoreViewpagerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

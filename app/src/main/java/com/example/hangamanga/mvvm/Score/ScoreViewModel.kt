@@ -24,7 +24,7 @@ class ScoreViewModel(
         try {
             scores.postValue(Resource.Loading())
             val response = repository.getScores()
-            scores.postValue(handleScoreResponse(response.awaitResponse()))
+            scores.postValue(handleScoreResponse(response))
         } catch (e: Exception) {
             println(e)
         }

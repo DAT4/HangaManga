@@ -12,8 +12,6 @@ import com.example.hangamanga.mvvm.Word.WordDatabase
 import com.example.hangamanga.mvvm.Word.WordRepository
 import com.example.hangamanga.mvvm.Word.WordViewModel
 import com.example.hangamanga.mvvm.Word.WordViewModelProviderFactory
-import com.example.hangamanga.observer.ConcreteScores
-import com.example.hangamanga.observer.ConcreteWords
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

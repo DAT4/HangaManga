@@ -7,7 +7,6 @@ import com.example.hangamanga.api.Resource
 import com.example.hangamanga.models.Word
 import kotlinx.coroutines.launch
 import retrofit2.Response
-import retrofit2.awaitResponse
 
 class WordViewModel(
     private val repository: WordRepository
@@ -23,7 +22,7 @@ class WordViewModel(
         try {
             words.postValue(Resource.Loading())
             val response = repository.getWords()
-            words.postValue(handleWordResponse(response.awaitResponse()))
+            words.postValue(handleWordResponse(response))
         } catch (e: Exception) {
             println(e)
         }
