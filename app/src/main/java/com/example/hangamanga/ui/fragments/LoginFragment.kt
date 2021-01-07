@@ -6,15 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.forEach
 import androidx.core.view.get
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.hangamanga.R
 import com.example.hangamanga.api.RetrofitInstance
 import com.example.hangamanga.api.TokenHolder
 import com.example.hangamanga.databinding.FragmentLoginBinding
-import com.example.hangamanga.models.Token
 import com.example.hangamanga.models.User
 import com.example.hangamanga.ui.MainActivity
 import kotlinx.coroutines.launch
