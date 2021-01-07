@@ -27,7 +27,7 @@ class CategoryRecyclerViewAdapter(
             title.text = category.first
             this.setOnClickListener {
                 val action = PickCategoryFragmentDirections
-                    .actionPickCategoryFragmentToEditCategoryFragment()
+                    .actionPickCategoryFragmentToPlayGameFragment(category.getOne(),player)
                 this.findNavController().navigate(action)
             }
         }

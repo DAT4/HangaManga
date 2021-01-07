@@ -155,12 +155,8 @@ class PlayGameFragment : Fragment() {
         return button
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        timer.cancel()
-    }
-
     private fun endGame(won: Boolean) {
+        timer.cancel()
         val score =
             HighScore(
                 player = player,
