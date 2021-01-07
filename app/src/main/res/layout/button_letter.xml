@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Button
+    android:theme="@style/Theme.MaterialComponents.Dialog.FixedSize"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="0dp"
+    android:minHeight="0dp"
+    android:padding="0dp"
+    android:layout_margin="5dp"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:height="50dp"
+    android:width="50dp"
+    android:textColor="@android:color/black"
+    android:backgroundTint="@android:color/transparent"
+    />

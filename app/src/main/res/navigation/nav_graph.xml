@@ -23,6 +23,7 @@
             android:id="@+id/action_mainFragment_to_startGameFragment"
             app:destination="@id/startGameFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/highScoreFragment"
         android:name="com.example.hangamanga.ui.fragments.HighScoreFragment"
@@ -46,7 +47,7 @@
         android:id="@+id/startGameFragment"
         android:name="com.example.hangamanga.ui.fragments.StartGameFragment"
         tools:layout="@layout/fragment_start_game"
-        android:label="StartGameFragment"></fragment>
+        android:label="StartGameFragment" />
     <fragment
         android:id="@+id/playGameFragment"
         android:name="com.example.hangamanga.ui.fragments.PlayGameFragment"
@@ -54,10 +55,16 @@
         android:label="PlayGameFragment">
         <action
             android:id="@+id/action_playGameFragment_to_endGameFragment"
+            app:popUpTo="@id/pickCategoryFragment"
+            app:popUpToInclusive="false"
             app:destination="@id/endGameFragment" />
         <argument
             android:name="word"
             app:argType="com.example.hangamanga.models.Word" />
+        <argument
+            android:name="player"
+            app:argType="string"
+            android:defaultValue="n00b" />
     </fragment>
     <fragment
         android:id="@+id/pickCategoryFragment"
@@ -75,7 +82,24 @@
         android:id="@+id/endGameFragment"
         android:name="com.example.hangamanga.ui.fragments.EndGameFragment"
         tools:layout="@layout/fragment_end_game"
-        android:label="EndGameFragment" />
+        android:label="EndGameFragment" >
+        <argument
+            android:name="score"
+            app:argType="com.example.hangamanga.models.HighScore" />
+        <argument
+            android:name="won"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_endGameFragment_to_mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_endGameFragment_to_pickCategoryFragment"
+            app:popUpTo="@id/pickCategoryFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/pickCategoryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.hangamanga.ui.fragments.LoginFragment"

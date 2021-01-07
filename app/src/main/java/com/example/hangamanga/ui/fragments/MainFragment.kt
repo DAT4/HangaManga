@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.hangamanga.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
@@ -25,11 +26,11 @@ class MainFragment : Fragment() {
         binding.apply {
             play.setOnClickListener{
                 val action = MainFragmentDirections.actionMainFragmentToPickCategoryFragment()
-                root.findNavController().navigate(action)
+                findNavController().navigate(action)
             }
             highscores.setOnClickListener{
                 val action = MainFragmentDirections.actionMainFragmentToHighScoreFragment()
-                root.findNavController().navigate(action)
+                findNavController().navigate(action)
             }
         }
     }

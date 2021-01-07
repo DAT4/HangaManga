@@ -59,9 +59,11 @@ class HighScoreFragment : Fragment() {
     }
 
     private fun getCategories(scores: List<HighScore>): List<Pair<String, List<HighScore>>> {
-        return scores.groupBy {
-            it.word.category
-        }.toList()
+        return scores
+            .sortedByDescending { it.getScore() }
+            .groupBy { it.word.category }
+            .mapValues { it.value.take(10) }
+            .toList()
     }
 
     private fun hideProgressBar() {

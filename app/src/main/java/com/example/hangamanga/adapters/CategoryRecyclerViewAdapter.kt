@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.cardview_category.view.*
 
 class CategoryRecyclerViewAdapter(
     private var categories : List<Pair<String,List<Word>>>,
+    private val player: String = "n00b",
 ) : RecyclerView.Adapter<CategoryRecyclerViewAdapter.CategoryViewHolder>() {
     inner class CategoryViewHolder(itemView: CardviewCategoryBinding) : RecyclerView.ViewHolder(itemView.root)
 
@@ -26,7 +27,7 @@ class CategoryRecyclerViewAdapter(
             title.text = category.first
             this.setOnClickListener {
                 val action = PickCategoryFragmentDirections
-                    .actionPickCategoryFragmentToPlayGameFragment(category.getOne())
+                    .actionPickCategoryFragmentToEditCategoryFragment()
                 this.findNavController().navigate(action)
             }
         }
