@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import com.example.hangamanga.R
 import com.example.hangamanga.databinding.FragmentLoginBinding
 import com.example.hangamanga.databinding.FragmentMainBinding
+import com.example.hangamanga.observer.ConcreteUser
 
 class MainFragment : Fragment() {
     private lateinit var _binding: FragmentMainBinding
@@ -27,10 +28,12 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             play.setOnClickListener{
-                root.findNavController().navigate(R.id.action_mainFragment_to_pickCategoryFragment)
+                val action = MainFragmentDirections.actionMainFragmentToPickCategoryFragment()
+                root.findNavController().navigate(action)
             }
             highscores.setOnClickListener{
-                root.findNavController().navigate(R.id.action_mainFragment_to_highScoreFragment)
+                val action = MainFragmentDirections.actionMainFragmentToHighScoreFragment()
+                root.findNavController().navigate(action)
             }
         }
     }

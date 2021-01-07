@@ -5,11 +5,11 @@ import com.example.hangamanga.models.HighScore
 import com.example.hangamanga.models.Word
 import java.lang.reflect.Type
 
-object ConcreteScores : ICache {
-    override val url: String = "https://mama.sh/hangman/api/highscores"
+object ConcreteScores : ICache<ArrayList<HighScore>> {
+    override val url: String = "https://mama.sh/hangman/api/"
     override val type: Type = object : TypeToken<ArrayList<HighScore>>() {}.type
 
-    override var content: ArrayList<*> = ArrayList<HighScore>()
+    override var content: ArrayList<HighScore> = ArrayList()
     override val observers: ArrayList<IObserver> = ArrayList()
 
     fun getHighScoreFromWord(word: Word): List<HighScore> {
@@ -24,7 +24,7 @@ object ConcreteScores : ICache {
     }
 
     fun getCategories(): List<Pair<String,List<HighScore>>>{
-        return (content as List<HighScore>).groupBy {
+        return content.groupBy {
             it.word.category
         }.toList()
     }
@@ -50,7 +50,8 @@ object ConcreteScores : ICache {
     }
 
     private fun order(scores: ArrayList<HighScore>): List<HighScore> {
-        scores.sortWith(kotlin.Comparator { lhs, rhs ->
+        scores
+            .sortWith(kotlin.Comparator { lhs, rhs ->
             when {
                 lhs.getScore() > rhs.getScore() -> -1
                 lhs.getScore() < rhs.getScore() -> 1

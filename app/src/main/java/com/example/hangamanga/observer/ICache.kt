@@ -8,15 +8,15 @@ import com.example.hangamanga.libs.DataGetter.getStuff
 import com.example.hangamanga.libs.DataGetter.updateStuff
 import java.lang.reflect.Type
 
-interface ICache : IObservable {
+interface ICache<T> : IObservable {
     val type: Type
     val url: String
 
-    var content: ArrayList<*>
+    var content: T
 
     fun cache() {
         GlobalScope.launch(Dispatchers.IO) {
-            val data: ArrayList<*> = getStuff(this@ICache.url, this@ICache.type)
+            val data: T = getStuff(this@ICache.url, this@ICache.type)
             launch(Dispatchers.Main) {
                 this@ICache.content = data
                 sendUpdateEvent()

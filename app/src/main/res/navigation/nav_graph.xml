@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_mainFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_startGameFragment"
+            app:destination="@id/startGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/highScoreFragment"
@@ -40,9 +43,6 @@
         android:id="@+id/startGameFragment"
         android:name="com.example.hangamanga.ui.fragments.StartGameFragment"
         android:label="StartGameFragment" >
-        <action
-            android:id="@+id/action_startGameFragment_to_playGameFragment"
-            app:destination="@id/playGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/playGameFragment"
@@ -51,17 +51,20 @@
         <action
             android:id="@+id/action_playGameFragment_to_endGameFragment"
             app:destination="@id/endGameFragment" />
+        <argument
+            android:name="word"
+            app:argType="com.example.hangamanga.models.Word" />
     </fragment>
     <fragment
         android:id="@+id/pickCategoryFragment"
         android:name="com.example.hangamanga.ui.fragments.PickCategoryFragment"
         android:label="PickCategoryFragment" >
         <action
-            android:id="@+id/action_pickCategoryFragment_to_startGameFragment"
-            app:destination="@id/startGameFragment" />
-        <action
             android:id="@+id/action_pickCategoryFragment_to_editCategoryFragment"
             app:destination="@id/editCategoryFragment" />
+        <action
+            android:id="@+id/action_pickCategoryFragment_to_playGameFragment"
+            app:destination="@id/playGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/endGameFragment"

@@ -5,10 +5,10 @@ import com.example.hangamanga.models.Category
 import com.example.hangamanga.models.Word
 import java.lang.reflect.Type
 
-object ConcreteWords : ICache {
+object ConcreteWords : ICache<ArrayList<Word>> {
     override val url: String = "https://mama.sh/hangman/api"
     override val type: Type = object : TypeToken<ArrayList<Word>>() {}.type
-    override var content: ArrayList<*> = ArrayList<Word>()
+    override var content: ArrayList<Word> = ArrayList()
 
     override val observers: ArrayList<IObserver> = ArrayList()
 
