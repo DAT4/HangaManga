@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -16,12 +17,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hangamanga.R
 import com.example.hangamanga.adapters.HighScoreRecyclerViewAdapter
 import com.example.hangamanga.api.Resource
+import com.example.hangamanga.api.RetrofitInstance
+import com.example.hangamanga.api.TokenHolder
 import com.example.hangamanga.databinding.FragmentEndGameBinding
 import com.example.hangamanga.models.HighScore
 import com.example.hangamanga.models.Word
 import com.example.hangamanga.mvvm.score.ScoreViewModel
 import com.example.hangamanga.ui.MainActivity
 import kotlinx.android.synthetic.main.fragment_end_game.*
+import kotlinx.coroutines.launch
+import okhttp3.internal.notifyAll
 
 class EndGameFragment : Fragment() {
     private lateinit var _binding: FragmentEndGameBinding
@@ -84,7 +89,7 @@ class EndGameFragment : Fragment() {
                 wordWord.setTextColor(Color.GREEN)
                 stateImage.setImageResource(R.drawable.win)
                 wordDescription.text = score.word.description
-                //TODO Add the new score with retrofit here
+                if (TokenHolder.token != "") submitScore(score)
             } else {
                 wordWord.setTextColor(Color.RED)
                 stateImage.setImageResource(R.drawable.loose)
@@ -101,5 +106,12 @@ class EndGameFragment : Fragment() {
         val adapter = HighScoreRecyclerViewAdapter(filteredScores)
         highscore_list.adapter = adapter
         highscore_list.layoutManager = LinearLayoutManager(activity)
+    }
+
+    private fun submitScore(score: HighScore) = lifecycleScope.launch {
+        RetrofitInstance.api.postScore(
+            token = TokenHolder.token,
+            score = score,
+        )
     }
 }
