@@ -12,7 +12,6 @@ import com.example.hangamanga.api.Resource
 import com.example.hangamanga.databinding.FragmentHighscoreBinding
 import com.example.hangamanga.models.HighScore
 import com.example.hangamanga.mvvm.Score.ScoreViewModel
-import com.example.hangamanga.observer.ConcreteScores
 import com.example.hangamanga.ui.MainActivity
 
 class HighScoreFragment : Fragment() {
@@ -53,19 +52,14 @@ class HighScoreFragment : Fragment() {
                 }
             }
         })
-
     }
 
-    private fun setupViewPager(scores: ArrayList<HighScore>) {
-        val adapter = CategoryHighScoreViewpagerAdapter(categories)
-        try {
-            binding.viewpager.adapter = adapter
-        } catch (e: java.lang.Exception) {
-            println(e)
-        }
+    private fun setupViewPager(scores: List<HighScore>) {
+        binding.viewpager.adapter =
+            CategoryHighScoreViewpagerAdapter(getCategories(scores))
     }
 
-    private fun getCategories(scores: ArrayList<HighScore>): List<Pair<String, List<HighScore>>> {
+    private fun getCategories(scores: List<HighScore>): List<Pair<String, List<HighScore>>> {
         return scores.groupBy {
             it.word.category
         }.toList()
